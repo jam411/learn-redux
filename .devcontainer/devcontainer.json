@@ -1,35 +1,30 @@
 {
-    "name": "React TypeScript Dev Container",
-    "dockerComposeFile": [
-      "../compose.yml"
-    ],
-    "service": "learn-redux",
-    "workspaceFolder": "/workspace/learn-redux",
-    "settings": {
-      "terminal.integrated.shell.linux": "/bin/bash",
-      "files.encoding": "utf8",
-      "files.eol": "\n",
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "[javascript]": {
+  "name": "React TypeScript Dev Container",
+  "dockerComposeFile": ["../compose.yml"],
+  "service": "learn-redux",
+  "workspaceFolder": "/workspace/learn-redux",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "files.encoding": "utf8",
+    "files.eol": "\n",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
-      }
-    },
-    "extensions": [
-// Prettier - Code formatter
-"esbenp.prettier-vscode", 
-// ES7+ React/Redux/React-Native snippets
-"dsznajder.es7-react-js-snippets",
-// React Extension Pack
-"jawandarajbir.react-vscode-extension-pack",
-// VSCode React Refactor
-"planbcoding.vscode-react-refactor",
-// ESLint
-"dbaeumer.vscode-eslint",
-// Git Graph
-"mhutchie.git-graph",
-// Git History
-"donjayamanne.githistory"
-    ],
-    "postCreateCommand": "yarn",
-    "remoteUser": "node"
-  }
+    }
+  },
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "mhutchie.git-graph",
+    "eamodio.gitlens",
+    "github.vscode-pull-request-github",
+    "cschleiden.vscode-github-actions",
+    "msjsdiag.debugger-for-chrome",
+    "firefox-devtools.vscode-firefox-debug",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "shinnn.stylelint",
+    "stylelint.vscode-stylelint"
+  ],
+  "postCreateCommand": "yarn",
+  "remoteUser": "node"
+}
