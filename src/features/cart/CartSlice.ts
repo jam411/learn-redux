@@ -1,14 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
+
+export type StateType = {
+  cartItems: string[];
+  amount: number;
+  title: string;
+};
 
 // initialize cart state
-const initialState = {
+const initialState: StateType = {
   cartItems: [],
-  amount: 0,
-  ttal: 0,
+  amount: 4,
+  title: '',
 };
 
 const cartSlice = createSlice({
-  name: "cart",
+  name: 'cart',
   initialState,
   reducers: {},
 });
