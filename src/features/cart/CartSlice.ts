@@ -1,22 +1,35 @@
 import { createSlice } from '@reduxjs/toolkit';
+import cartItems from '../../cartItems';
+
+export type CartItemType = {
+  id: number;
+  title: string;
+  price: number;
+  img: string;
+  amount: number;
+};
 
 export type StateType = {
-  cartItems: string[];
+  cartItems: CartItemType[];
   amount: number;
-  title: string;
+  total: number;
 };
 
 // initialize cart state
 const initialState: StateType = {
-  cartItems: [],
+  cartItems: cartItems,
   amount: 4,
-  title: '',
+  total: 0,
 };
 
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
-  reducers: {},
+  reducers: {
+    clearCart: (state) => {
+      state.cartItems = [];
+    },
+  },
 });
 
 export default cartSlice.reducer;
