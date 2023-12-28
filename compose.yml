@@ -1,0 +1,10 @@
+version: '3'
+services:
+  learn-redux:
+    container_name: learn-redux
+    image: node
+    tty: true
+    volumes:
+      - .:/workspace/learn-redux
+    ports:
+      - "5173:5173"

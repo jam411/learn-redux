@@ -1,13 +1,34 @@
 {
     "name": "React TypeScript Dev Container",
-    "dockerFile": "Dockerfile",
+    "dockerComposeFile": [
+      "../compose.yml"
+    ],
+    "service": "learn-redux",
+    "workspaceFolder": "/workspace/learn-redux",
     "settings": {
-      "terminal.integrated.shell.linux": "/bin/bash"
+      "terminal.integrated.shell.linux": "/bin/bash",
+      "files.encoding": "utf8",
+      "files.eol": "\n",
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      }
     },
     "extensions": [
-      "dbaeumer.vscode-eslint",
-      "ms-vscode.vscode-typescript-tslint-plugin",
-      "esbenp.prettier-vscode"
+// Prettier - Code formatter
+"esbenp.prettier-vscode", 
+// ES7+ React/Redux/React-Native snippets
+"dsznajder.es7-react-js-snippets",
+// React Extension Pack
+"jawandarajbir.react-vscode-extension-pack",
+// VSCode React Refactor
+"planbcoding.vscode-react-refactor",
+// ESLint
+"dbaeumer.vscode-eslint",
+// Git Graph
+"mhutchie.git-graph",
+// Git History
+"donjayamanne.githistory"
     ],
     "postCreateCommand": "yarn",
     "remoteUser": "node"
