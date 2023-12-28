@@ -4,7 +4,7 @@ import type { StateType } from '../features/cart/CartSlice';
 import { CartIcon } from '../assets/HeroIcon';
 
 // TODO: check type
-interface RootState {
+export interface RootState {
   cart: StateType;
 }
 
