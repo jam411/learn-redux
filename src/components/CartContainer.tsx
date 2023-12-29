@@ -1,9 +1,11 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { StateType } from '../features/cart/CartSlice';
 import { RootState } from './Navbar';
 import CartItem from './CartItem';
+import { openModal } from '../features/modal/ModalSlice';
 
 const CartContainer = () => {
+  const dispatch = useDispatch();
   const { amount, cartItems, total } = useSelector<RootState, StateType>((state) => state.cart);
   console.log(amount, cartItems, total);
 
@@ -20,23 +22,25 @@ const CartContainer = () => {
   }
 
   return (
-    <section className="cart">
-      <header>
-        <h2>Your Cart</h2>
+    <section className="container">
+      <header className="row">
+        <h2 className="col">Your Cart</h2>
       </header>
-      <div>
+      <div className="row">
         {cartItems.map((item) => {
           return <CartItem key={item.id} {...item} />;
         })}
       </div>
-      <footer>
-        <hr />
-        <div className="cart-total">
+      <footer className="row">
+        <hr className="col" />
+        <div className="col">
           <h4>
             Total <span>{total} $</span>
           </h4>
         </div>
-        <button className="btn clear-btn">Clear Cart</button>
+        <button className="btn clear-btn col" onClick={() => dispatch(openModal())}>
+          Clear Cart
+        </button>
       </footer>
     </section>
   );

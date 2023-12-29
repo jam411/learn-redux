@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import type { StateType } from '../features/cart/CartSlice';
 import { CartIcon } from '../assets/HeroIcon';
@@ -6,19 +5,22 @@ import { CartIcon } from '../assets/HeroIcon';
 // TODO: check type
 export interface RootState {
   cart: StateType;
+  modal: {
+    isOpen: boolean;
+  };
 }
 
 const Navbar = () => {
   const { amount } = useSelector<RootState, StateType>((store) => store.cart);
 
   return (
-    <nav>
-      <div className="nav-center">
-        <h3>Redux Shoppping</h3>
-        <div className="nav-container">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid">
+        <h3 className="navbar-brand">Redux Shopping</h3>
+        <div>
           <CartIcon />
-          <div className="amount-container">
-            <p className="total-amount">{amount}</p>
+          <div>
+            <p className="badge bg-secondary">{amount}</p>
           </div>
         </div>
       </div>
