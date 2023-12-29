@@ -5,6 +5,9 @@ import { CartIcon } from '../assets/HeroIcon';
 // TODO: check type
 export interface RootState {
   cart: StateType;
+  modal: {
+    isOpen: boolean;
+  };
 }
 
 const Navbar = () => {
