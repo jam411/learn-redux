@@ -20,23 +20,23 @@ const CartContainer = () => {
   }
 
   return (
-    <section className="cart">
-      <header>
-        <h2>Your Cart</h2>
+    <section className="container">
+      <header className="row">
+        <h2 className="col">Your Cart</h2>
       </header>
-      <div>
+      <div className="row">
         {cartItems.map((item) => {
           return <CartItem key={item.id} {...item} />;
         })}
       </div>
-      <footer>
-        <hr />
-        <div className="cart-total">
+      <footer className="row">
+        <hr className="col" />
+        <div className="col">
           <h4>
             Total <span>{total} $</span>
           </h4>
         </div>
-        <button className="btn clear-btn">Clear Cart</button>
+        <button className="btn clear-btn col">Clear Cart</button>
       </footer>
     </section>
   );
